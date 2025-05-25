@@ -52,8 +52,7 @@
     border-radius: 50%;
     opacity: 0.8;
     animation: twinkle 3s infinite ease-in-out;
-    box-shadow:
-      0 0 4px 2px white;
+    box-shadow: 0 0 4px 2px white;
   }
   /* Different star sizes and animation delays */
   .star.small {
@@ -87,10 +86,11 @@
   }
   .poem-container {
     background: rgba(20, 36, 61, 0.85);
-    padding: 40px 40px 60px 40px;
+    padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 25px 5px #7462ef;
     max-width: 400px;
+    width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
     user-select: none;
     position: relative;
     z-index: 1;
@@ -110,10 +110,7 @@
     margin-bottom: 1.5em;
     font-size: 4rem;
     color: #d9d9f7;
-    text-shadow:
-      0 0 5px #b3a7ff,
-      0 0 15px #a178ff,
-      0 0 25px #8d56ff;
+    text-shadow: 0 0 5px #b3a7ff, 0 0 15px #a178ff, 0 0 25px #8d56ff;
   }
   .author {
     margin-top: 1em;
@@ -128,6 +125,25 @@
     color: #c1a1ff;
     font-size: 1.1rem;
     text-shadow: 0 0 8px #9f83ff;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 600px) {
+    .poem-container {
+      padding: 20px;
+    }
+    .moon {
+      font-size: 3rem;
+    }
+    .poem-container h1 {
+      font-size: 1.5rem;
+    }
+    .poem-container p {
+      font-size: 1rem;
+    }
+    .author, .dedication {
+      font-size: 0.9rem;
+    }
   }
 </style>
 </head>
@@ -155,7 +171,6 @@
     tú eres luz que ilumina la<br />
     felicidad y el amor puro,<br />
     mi eterno faro en la oscuridad.</p>
-    
   </div>
 </body>
 </html>
