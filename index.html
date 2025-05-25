@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poema a la Luna</title>
+<style>
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  @keyframes shooting {
+    0% {
+      transform: translateX(0) translateY(0) scaleX(1) scaleY(1);
+      opacity: 1;
+      box-shadow: 0 0 10px 4px white;
+    }
+    80% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(120vw) translateY(60vh) scaleX(0.2) scaleY(0.2);
+      opacity: 0;
+      box-shadow: 0 0 20px 10px white;
+    }
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #0d1b2a, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    color: #f0e6f6;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Stars container */
+  .stars {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* Individual stars */
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out;
+    box-shadow:
+      0 0 4px 2px white;
+  }
+  /* Different star sizes and animation delays */
+  .star.small {
+    width: 2px;
+    height: 2px;
+    animation-duration: 2s;
+  }
+  .star.medium {
+    width: 3px;
+    height: 3px;
+    animation-duration: 3s;
+  }
+  .star.large {
+    width: 4px;
+    height: 4px;
+    animation-duration: 4s;
+  }
+  /* Shooting star */
+  .shooting-star {
+    position: fixed;
+    top: 20%;
+    left: -10%;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, white, rgba(255,255,255,0));
+    box-shadow: 0 0 10px 4px white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: shooting 3s linear infinite;
+    z-index: 0;
+  }
+  .poem-container {
+    background: rgba(20, 36, 61, 0.85);
+    padding: 40px 40px 60px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px 5px #7462ef;
+    max-width: 400px;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+  }
+  .poem-container h1 {
+    margin-bottom: 1em;
+    font-weight: 700;
+    color: #9f83ff;
+    text-shadow: 0 0 10px #9f83ff;
+  }
+  .poem-container p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+  }
+  .moon {
+    margin-bottom: 1.5em;
+    font-size: 4rem;
+    color: #d9d9f7;
+    text-shadow:
+      0 0 5px #b3a7ff,
+      0 0 15px #a178ff,
+      0 0 25px #8d56ff;
+  }
+  .author {
+    margin-top: 1em;
+    font-style: italic;
+    color: #b3a7ff;
+    font-size: 1rem;
+    text-shadow: 0 0 5px #7462ef;
+  }
+  .dedication {
+    margin-top: 1em;
+    font-weight: 600;
+    color: #c1a1ff;
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px #9f83ff;
+  }
+</style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true">
+    <div class="star small" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="star medium" style="top: 25%; left: 30%; animation-delay: 1.2s;"></div>
+    <div class="star large" style="top: 40%; left: 50%; animation-delay: 0.7s;"></div>
+    <div class="star small" style="top: 60%; left: 10%; animation-delay: 2s;"></div>
+    <div class="star medium" style="top: 70%; left: 75%; animation-delay: 1.5s;"></div>
+    <div class="star large" style="top: 80%; left: 30%; animation-delay: 0.4s;"></div>
+    <div class="star small" style="top: 90%; left: 85%; animation-delay: 2.5s;"></div>
+    <div class="star medium" style="top: 15%; left: 80%; animation-delay: 1s;"></div>
+    <div class="star large" style="top: 5%; left: 60%; animation-delay: 0.8s;"></div>
+    <div class="star small" style="top: 50%; left: 90%; animation-delay: 1.7s;"></div>
+  </div>
+  <div class="shooting-star" aria-hidden="true"></div>
+  <div class="poem-container" role="main" aria-label="Poema a la luna">
+    <div class="author">De: Jesús Schwarzeneger reyes </div>
+    <div class="dedication">Para: Lupiiz Sung</div>
+    <div class="moon" aria-hidden="true">🌕</div>
+    <h1>A la Luna</h1>
+    <p>Esta noche, una luna brillante,<br />
+    escucha mi eco en el aire:<br />
+    tú eres luz que ilumina la<br />
+    felicidad y el amor puro,<br />
+    mi eterno faro en la oscuridad.</p>
+    
+  </div>
+</body>
+</html>
